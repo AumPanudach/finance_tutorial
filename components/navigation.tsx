@@ -42,6 +42,7 @@ const navigation = () => {
   const router = useRouter();
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [isOpen, setIsOpen] = useState(false);
+  // this on click function is change page and set isOpen
   const onClick = (href: string) => {
     router.push(href);
     setIsOpen(false);

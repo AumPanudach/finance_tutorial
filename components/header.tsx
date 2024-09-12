@@ -1,6 +1,10 @@
 import HeaderLogo from "@/components/header-logo";
 import Navigation from "@/components/navigation";
-import {UserButton} from "@clerk/nextjs";
+import WelcomeMsg from "@/components/welcome-msg";
+import { Loader2 } from "lucide-react";
+import {UserButton, ClerkLoading ,ClerkLoaded} from "@clerk/nextjs";
+
+
 
 const Header = () => {
   return (
@@ -11,8 +15,14 @@ const Header = () => {
             <HeaderLogo />
             <Navigation />
           </div>
-          <UserButton />
+          <ClerkLoaded>
+          <UserButton/>
+          </ClerkLoaded>
+          <ClerkLoading>
+            <Loader2 className="size-8 animate-spin text-slate-400"/>
+          </ClerkLoading>
         </div>
+        <WelcomeMsg />
       </div>
     </header>
   );
